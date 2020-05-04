@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+.main_header {
+    margin: 5%;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+#coronaRot img {
+    animation: goCorona 3s linear infinite;
+}
+
+@keyframes goCorona {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.leftSide img {
+    animation: heartbeat 5s linear infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(.75);
+    }
+    20% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(.75);
+    }
+    60% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(.75);
+    }
+    100% {
+        transform: scale(.75);
+    }
+}
+
+.top {
+    margin-top: 5%;
+}
+
+.p-top {
+    margin-top: 35px;
+}

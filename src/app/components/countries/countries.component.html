@@ -1,0 +1,61 @@
+<div class="ui  inverted dimmer" [class.active]="loading">
+    <div class="ui text loader">Loading</div>
+</div>
+
+<div class="jumbotron text-center">
+    <div class="mx-auto">
+        <div class="form-group col-lg-5 mx-auto inline-fields">
+            <label for="country"><h3>Select a Country</h3></label>
+            <select class="form-control field" #input id="country" (change)="updateValue(input.value)">
+                <option value="">Select Country</option>
+                <option *ngFor="let c of countries" value="{{c}}">{{c}}</option>    
+            </select>
+        </div>
+    </div>
+    <div *ngIf="input.value!=''">
+        <h3 style="margin-left:-64% ;">
+            <span class="leftSide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Basic_red_dot.png" style="width: 1%; margin-right: 8px;">
+            </span> {{ input.value }}'s Covid19 statistics</h3>
+    </div>
+    <div *ngIf=" input.value=='' ">
+        <h3 style="margin-left:-64% ;">
+            <span class="leftSide">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Basic_red_dot.png" style="width: 1%; margin-right: 8px;">
+            </span>India's Covid19 Statistics</h3>
+    </div>
+    <hr/>
+    <dashboard-card [totalConfirmed]="totalConfirmed " [totalRecovered]="totalRecovered " [totalActive]="totalActive " [totalDeath]="totalDeath "></dashboard-card>
+
+
+    <div class="row ">
+
+        <!-- <div class="col-md-6 ">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Sl no</th>
+                        <th>Date</th>
+                        <th>No of Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cs of selectedCountryData;index as i ">
+                        <td>{{i+1}}</td>
+                        <td>{{cs.date | date}}</td>
+                        <td>{{cs.cases}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+        <div class="col">
+            <google-chart [type]="chart.LineChart " [data]="datatable " style="width:100%; " [height]="chart.height " [options]="chart.options "></google-chart>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="bg-dark" style="width: 100%;">
+        <p class="text-center" style="color: ghostwhite;">Covid-19 Tracker WebSite</p>
+    </div>
+</footer>
