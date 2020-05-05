@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { SymptomsAndPrecautionsComponent } from './symptoms-and-precautions/symptoms-and-precautions.component'; 
+import {AgGridModule} from 'ag-grid-angular';
+import { AgGridComponent } from './ag-grid/ag-grid.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { SymptomsAndPrecautionsComponent } from './symptoms-and-precautions/symp
     HomeComponent,
     CountriesComponent,
     DashboardCardComponent,
-    SymptomsAndPrecautionsComponent
+    SymptomsAndPrecautionsComponent,
+    AgGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

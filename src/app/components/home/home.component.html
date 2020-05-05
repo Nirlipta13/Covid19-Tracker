@@ -32,7 +32,7 @@
 
 
 <div class="row" style="padding: 3%;">
-    <div class="col">
+    <!-- <div class="col">
         <h3 class="text-center" style="margin-bottom: 2%;">COUNTRY WISE STATUS</h3>
         <div style="overflow: scroll; height: 500px;">
             <table class="table table-striped table-dark" style="margin-left: 3%;">
@@ -58,6 +58,10 @@
             </table>
         </div>
 
+    </div> -->
+    <div class="col">
+        <ag-grid-angular style="width: 750px; height:500px;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs" (gridReady)="onGridReady($event)">
+        </ag-grid-angular>
     </div>
     <div class="col">
         <div class="ui form" style="margin-left:2%;">
@@ -94,7 +98,10 @@
 
     </div>
 </div>
+
 <hr/>
+
+
 <symptoms-and-precautions></symptoms-and-precautions>
 
 <footer>
