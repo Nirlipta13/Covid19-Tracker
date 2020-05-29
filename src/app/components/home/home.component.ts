@@ -9,11 +9,11 @@ import { ConditionalExpr } from '@angular/compiler';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public gridApi;
-  public gridColumnApi;
-  public columnDefs;
-  public sortingOrder;
-  public rowData;
+  // public gridApi;
+  // public gridColumnApi;
+  // public columnDefs;
+  // public sortingOrder;
+   public rowData;
 
 
   totalConfirmed = 0;
@@ -24,6 +24,24 @@ export class HomeComponent implements OnInit {
   loading = true;
   datatable = [];
   countries: any = [];
+
+  columnDefs = [
+    {headerName: 'COUNTRY', field: 'country', sortable: true, filter: true },
+    {headerName: 'CONFIRMED', field: 'confirmed', sortable: true, filter: true },
+    {headerName: 'RECOVERED', field: 'recovered', sortable: true, filter: true},
+    {headerName: 'ACTIVE', field: 'active', sortable: true, filter: true},
+    {headerName: 'DECEASED', field: 'deaths', sortable: true, filter: true}
+];
+
+  rowdata = this.dataService.getGlobalData().subscribe({
+      next: (result) => {
+        result.splice(-1, 1);
+        this.rowData = result;
+      },
+      complete: () => {
+        this.loading = false;
+      }
+    });
 
   chart = {
     PieChart: 'PieChart',
@@ -39,31 +57,6 @@ export class HomeComponent implements OnInit {
   };
 
   constructor(private dataService: DataServiceService) {
-    this.columnDefs = [
-      {
-        headerName: 'Country',
-        field: 'country'
-      },
-      {
-        headerName: 'Confirmed',
-        field: 'confirmed'
-        
-      },
-      {
-        headerName: 'Active',
-        field: 'active'
-        
-      },
-      {
-        headerName: 'Recovered',
-        field: 'recovered'
-        
-      }, {
-        headerName: 'Deceased',
-        field: 'deaths'
-        
-      }
-    ];
   }
 
   initChart(caseType: string){
@@ -128,22 +121,5 @@ export class HomeComponent implements OnInit {
         }
       });
 
-    this.rowData = this.dataService.getGlobalData();
-  }
-
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-    // this.dataService.getGlobalData()
-    // .subscribe(
-    //   {
-    //     next: (result) => {
-    //       this.rowData=result;
-    //       console.log(result);
-    //     },
-    //     complete: () => {
-    //       this.loading = false;
-    //     }
-    //   });
   }
 }

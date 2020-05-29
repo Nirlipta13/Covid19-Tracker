@@ -24,9 +24,7 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.css",
-                            "../covid19-tracker/node_modules/ag-grid/dist/styles/ag-grid.css",
-                            "../covid19-tracker/node_modules/ag-grid/dist/styles/ag-theme-balham.css"
+                            "src/styles.css"
                         ],
                         "scripts": []
                     },

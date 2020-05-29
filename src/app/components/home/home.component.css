@@ -3,3 +3,8 @@
         display: none;
     }
 }
+
+.ag-header-cell-text {
+    color: darkblue;
+    font-weight: 700;
+}
