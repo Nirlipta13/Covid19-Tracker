@@ -3,6 +3,7 @@
 // import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {AgGridModule} from 'ag-grid-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import {FormsModule} from '@angular/forms'
     AppRoutingModule,
     HttpClientModule,
     GoogleChartsModule,
-    FormsModule
+    FormsModule,
+    AgGridModule.withComponents([])
     //ChatModule
   ],
   providers: [],
