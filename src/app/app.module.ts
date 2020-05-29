@@ -1,3 +1,6 @@
+// import { ChatModule } from './chat/chat.module';
+// import { ChatService } from './chat/chat.service';
+// import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,8 +13,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { SymptomsAndPrecautionsComponent } from './symptoms-and-precautions/symptoms-and-precautions.component'; 
-import {AgGridModule} from 'ag-grid-angular';
-import { AgGridComponent } from './ag-grid/ag-grid.component';
+
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -20,17 +23,19 @@ import { AgGridComponent } from './ag-grid/ag-grid.component';
     HomeComponent,
     CountriesComponent,
     DashboardCardComponent,
-    SymptomsAndPrecautionsComponent,
-    AgGridComponent
+    SymptomsAndPrecautionsComponent
+    //ChatDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     GoogleChartsModule,
-    AgGridModule.withComponents([])
+    FormsModule
+    //ChatModule
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
