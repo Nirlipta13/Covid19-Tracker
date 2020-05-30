@@ -26,7 +26,9 @@
                         "styles": [
                             "src/styles.css"
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "../covid19-tracker/src/assets/js/webchat.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
