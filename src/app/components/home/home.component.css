@@ -4,6 +4,12 @@
     }
 }
 
+@media only screen and (max-width: 360px) {
+    #grid {
+        width: 500px;
+    }
+}
+
 .ag-header-cell-text {
     color: darkblue;
     font-weight: 700;
