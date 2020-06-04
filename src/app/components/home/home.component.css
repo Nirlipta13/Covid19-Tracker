@@ -10,6 +10,11 @@
     }
 }
 
+#grid {
+    width: 700px;
+    height: 550px;
+}
+
 .ag-header-cell-text {
     color: darkblue;
     font-weight: 700;
