@@ -4,15 +4,16 @@
     }
 }
 
-@media only screen and (max-width: 360px) {
-    #grid {
-        width: 300px;
-    }
-}
-
 #grid {
     width: 700px;
     height: 550px;
+    overflow: scroll;
+}
+
+@media only screen and (max-width: 360px) {
+    #grid {
+        width: 335px;
+    }
 }
 
 .ag-header-cell-text {
