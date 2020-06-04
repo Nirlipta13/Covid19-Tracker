@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
   countries: any = [];
 
   columnDefs = [
-    {headerName: 'COUNTRY', field: 'country', sortable: true, filter: true },
-    {headerName: 'CONFIRMED', field: 'confirmed', sortable: true, filter: true },
-    {headerName: 'RECOVERED', field: 'recovered', sortable: true, filter: true},
-    {headerName: 'ACTIVE', field: 'active', sortable: true, filter: true},
-    {headerName: 'DECEASED', field: 'deaths', sortable: true, filter: true}
+    {headerName: 'COUNTRY', field: 'country',  sortable: true, filter: true },
+    {headerName: 'CONFIRMED', field: 'confirmed',  sortable: true, filter: true },
+    {headerName: 'RECOVERED', field: 'recovered',  sortable: true, filter: true},
+    {headerName: 'ACTIVE', field: 'active',  sortable: true, filter: true},
+    {headerName: 'DECEASED', field: 'deaths',  sortable: true, filter: true}
 ];
 
   rowdata = this.dataService.getGlobalData().subscribe({
