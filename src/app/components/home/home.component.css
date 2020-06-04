@@ -10,7 +10,7 @@
     overflow: scroll;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 400px) {
     #grid {
         width: 335px;
     }
